@@ -1,0 +1,12 @@
+
+					
+					<%= simple_form_for(@enquiry) do |f| %>
+					  <%= f.error_notification %>
+					    <%= f.input :name, required: true, :input_html => { :class => 'form-control' }  %>
+					    <%= f.input :email, required: true, :input_html => { :class => 'form-control' } %>
+					    <%= f.input :phone, :input_html => { :class => 'form-control' } %>
+					    <%= f.input :enquiry_type, :collection => ['Course enquiry', 'Web development enquiry', 'Startup enquiry', 'Website error enquiry'], :input_html => { :class => 'form-control'} %>
+					    <%= f.input :message, required: true, :input_html => { :rows => '5', :class => 'form-control' } %>
+					    <br>
+					    <%= f.submit 'Enquire now', :class => 'btn btn-info btn-large' %>
+					<% end %>

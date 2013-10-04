@@ -1,0 +1,31 @@
+<%= simple_form_for(@enrolment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :name, input_html: {class: 'form-control'} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :email, input_html: {class: 'form-control'} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :phone, input_html: {class: 'form-control'} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.input :referral, input_html: {class: 'form-control'}, label: "Where did you hear about The Coder Factory?" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-8">
+      <%= f.association :intakes, as: :check_boxes, label: "Which courses/intakes are you enroling in?" %>
+    </div>
+  </div>
+
+  <button class="btn btn-warning btn-lg loading-button" name="commit" type="submit" value="Send me my info pack" data-loading-text="Enrolling..." />Enrol now</button>
+<% end %>

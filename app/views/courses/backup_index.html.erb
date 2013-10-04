@@ -1,0 +1,121 @@
+<% content_for :title, "Ruby on Rails courses at The Coder Factory - build your own app or startup" %>
+<% content_for :description, "A list of the Ruby on Rails, Angular.js and Node.js (and other javascript) courses at The Coder Factory. A new intake every month." %>
+
+<h1 class="text-warning">Courses</h1>
+<div class="panel-group" id="accordion">
+  <% @courses.each_with_index do |course, c_index| %>
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+          <h2 class="panel-title">
+              <span class="icon-stack">
+                <i class="icon-check-empty icon-stack-base"></i>
+                <i class="icon-<%= course.icon %>"></i>
+              </span> 
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= c_index %>"><%= course.title %> 
+              </a>
+          </h2>
+      </div>
+      <div id="collapse<%= c_index %>" class="panel-collapse collapse <%= 'in' if c_index == 0 %>">
+        <div class="panel-body">
+          <div class="well">
+            <p class="lead"><%= course.intro.html_safe %></p>
+
+            <p><%= course.description.html_safe %></p>
+            <br>
+            <p><strong>Designed for:</strong> <%= course.designed_for.html_safe %></p>
+          </div>
+            <h4><strong>Scheduled intakes</strong></h4>
+            <% if course.intakes.count > 0 %>
+                <% course.intakes.each_with_index do |intake, i_index| %>
+                    <p><a data-toggle="modal" href="#modal<%= c_index %><%= i_index %>" class="btn btn-warning btn-lg"> <%= intake.start_date.strftime("%e %B %Y") %></a></p>
+                <% end %>
+            <% else %>
+                <p>Coming soon</p>
+            <% end %>
+
+
+
+            <%= link_to "Edit", edit_course_path(course) %>
+
+    
+        </div>
+      </div>
+    </div>
+
+      
+  <% end %>
+</div>
+<% @courses.each_with_index do |course, c_index| %>
+    <% if course.intakes.count > 0 %>
+          <% course.intakes.each_with_index do |intake, i_index| %>
+            <div class="modal fade" id="modal<%= c_index %><%= i_index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h3 class="modal-title text-warning">
+                              <span class="icon-stack">
+                                <i class="icon-check-empty icon-stack-base"></i>
+                                <i class="icon-<%= course.icon %>"></i>
+                              </span> 
+                              <strong><%= course.title %>: <%= intake.start_date.strftime("%B") %> intake</strong></h3>
+                        </div>
+                        <div class="modal-body">
+                          <table class="table table-hover">
+                              <tr>
+                                  <td>
+                                      <span class=" text-warning"><i class="icon-li icon-star"></i> <strong>Duration:</strong> </span>
+                                  </td>
+                                  <td>
+                                      <%= intake.duration %> 
+                                      <%= intake.duration_type %>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <span class=" text-warning"><i class="icon-li icon-calendar"></i> <strong>Class days:</strong> </span>
+                                  </td>
+                                  <td>
+                                      <%= intake.class_days %> 
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <span class=" text-warning"><i class="icon-li icon-time"></i> <strong>Times:</strong> </span>
+                                  </td>
+                                  <td>
+                                      <%= intake.start_time.strftime("%l.%M%p") %> - <%= intake.finish_time.strftime("%l.%M%p") %>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <span class=" text-warning"><i class="icon-li icon-exclamation-sign"></i> <strong>Fee:</strong> </span>
+                                  </td>
+                                  <td>
+                                      AUD <%= intake.cost.to_int %> (incl. GST)
+                                  </td>
+                              </tr><tr>
+                                  <td>
+                                      <span class=" text-warning"><i class="icon-li icon-map-marker"></i> <strong>Location:</strong> </span>
+                                  </td>
+                                  <td>
+                                      <%= intake.location %> 
+                                  </td>
+                              </tr>
+                          </table>
+                           
+                            
+
+                            
+                        </div>
+                        <div class="modal-footer">
+                          <%= link_to "ENROL", root_path, class: "btn btn-warning btn-lg" %>
+                          <%= link_to "Register your interest", root_path, class: "btn btn-info btn-lg" %>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+        <% end %>
+    <% end %>
+<% end %>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Registration of interest received</h1>
+    
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td><%= @registration.name %></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td><%= @registration.email %></td>
+      </tr>
+      <tr>
+        <th>Phone:</th>
+        <td><%= @registration.phone %></td>
+      </tr>
+      
+      <tr>
+        <th>Courses:</th>
+        <td><% @registration.courses.each do |course| %><%= course.title %>, <% end %></td>
+      </tr>
+    </table>
+  </body>
+</html>

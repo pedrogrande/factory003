@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @enrolment.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @enrolment.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @enrolment.phone %>
+</p>
+
+<p>
+  <strong>Referral:</strong>
+  <%= @enrolment.referral %>
+</p>
+
+<p>
+  <strong>Intakes:</strong>
+  <% @enrolment.intakes.each do |intake| %><%= intake.title %>, <% end %>
+</p>
+
+<%= link_to 'Edit', edit_enrolment_path(@enrolment) %> |
+<%= link_to 'Back', enrolments_path %>

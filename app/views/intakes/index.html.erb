@@ -1,0 +1,45 @@
+<h1>Listing intakes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Start date</th>
+      <th>Start time</th>
+      <th>Finish time</th>
+      <th>Duration</th>
+      <th>Duration type</th>
+      <th>Scheduled</th>
+      <th>Confirmed</th>
+      <th>Location</th>
+      <th>Cost</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @intakes.each do |intake| %>
+      <tr>
+        <td><%= intake.course %></td>
+        <td><%= intake.start_date %></td>
+        <td><%= intake.start_time %></td>
+        <td><%= intake.finish_time %></td>
+        <td><%= intake.duration %></td>
+        <td><%= intake.duration_type %></td>
+        <td><%= intake.scheduled %></td>
+        <td><%= intake.confirmed %></td>
+        <td><%= intake.location %></td>
+        <td><%= intake.cost %></td>
+        <td><%= link_to 'Show', intake %></td>
+        <td><%= link_to 'Edit', edit_intake_path(intake) %></td>
+        <td><%= link_to 'Destroy', intake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Intake', new_intake_path %>

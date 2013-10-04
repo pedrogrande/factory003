@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Thank you for your registration of interest in The Coder Factory!</h1>
+    <p>This is an automated email so you know your request has been received. The information you requested will be sent very shortly.</p>
+    <p>Here is a copy of your form for your records.</p>
+    
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td><%= @registration.name %></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td><%= @registration.email %></td>
+      </tr>
+      <tr>
+        <th>Phone:</th>
+        <td><%= @registration.phone %></td>
+      </tr>
+      
+      <tr>
+        <th>Courses:</th>
+        <td><% @registration.courses.each do |course| %><%= course.title %>, <% end %></td>
+      </tr>
+    </table>
+  </body>
+</html>

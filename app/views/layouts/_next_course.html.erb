@@ -1,0 +1,16 @@
+<div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="icon-exclamation-sign"></i> Next course</h3>
+        </div>
+        <div class="panel-body sidebar">
+
+            <ul class="icons-ul">
+                  <li><i class="icon-li icon-star"></i> <span class="text-danger"><%= link_to @next_intake.course.title, course_path(@next_intake.course) %></span></li>
+                  <li><i class="icon-li icon-calendar"></i> <%= @next_intake.start_date.strftime("%e %b %Y") %></li>
+                  <li><i class="icon-li icon-time"></i> <%= @next_intake.class_days %><br><%= @next_intake.start_time.strftime("%l.%M%p") %> - <%= @next_intake.finish_time.strftime("%l.%M%p") %></li>
+                  <li><i class="icon-li icon-map-marker"></i> <%= @next_intake.location %></li>
+                </ul>
+          
+          <%= link_to course_path(@next_intake.course), target: "_blank", class: "btn btn-warning btn-block" do %> <i class="icon-circle-arrow-right"></i> More details<% end %>
+        </div>
+      </div>

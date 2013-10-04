@@ -1,0 +1,20 @@
+<%= simple_form_for(@event) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :title %>
+  <%= f.input :intro %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :address %>
+  <%= f.input :suburb %>
+  <%= f.input :postcode %>
+  <%= f.input :date %>
+  <%= f.input :start_time %>
+  <%= f.input :finish_time %>
+  <%= f.input :cost %>
+  <%= f.input :rsvp %>
+  <%= f.input :icon %><br>
+  <%= f.input :publish %>
+  
+  <%= f.submit %>
+<% end %>

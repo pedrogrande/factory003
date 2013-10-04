@@ -1,0 +1,57 @@
+<% content_for :title, "Calendar: The Coder Factory - what's happening in the Rails community - events, information session, demonstrations, meetup groups." %>
+<% content_for :description, "A list of the upcoming Ruby on Rails community events in Sydney, Australia and around the world." %>
+
+<h1 class="text-danger">Calendar</h1>
+<div class="panel-group" id="accordion">
+       <div class="panel panel-danger">
+            <div class="panel-heading">
+                <div class="panel-title">
+                	<span class="icon-stack">
+                	  <i class="icon-check-empty icon-stack-base"></i>
+                	  <i class="icon-calendar"></i>
+                	</span> 
+                	<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Events this month</a>
+                	
+                </div>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+	            <div class="panel-body">
+	            	
+					<table class="table table-hover">
+	              		<% @current_month_events.each do |event| %>
+	              	
+	              		<tr>
+	              			<td>
+	              				
+	              				<h3 class="calendar"><%= event.date.strftime("%A, %e %B %Y") %></h3>
+	              				<h2 class="calendar"><strong><%= link_to event.title, event %></strong></h2>
+	              				<%= link_to event, class: 'btn btn-default btn-sm' do %><i class="icon-info-sign"></i> More details<% end %>
+	              				<a href="<%= event.rsvp %>" target="_blank" class="btn btn-danger btn-sm"><i class="icon-circle-arrow-right"></i> Reserve your place</a>
+	              				<%= link_to "Edit", edit_event_path(event) %>
+	              			</td>
+	              			<td width="40%">
+	              				<ul class="icons-ul">
+		                			<li>
+		                					<i class="icon-li icon-star"></i> 
+		                					Cost: 
+		                						<% if @next_event.cost == 0 %>
+		                							<strong>FREE!</strong>
+		                						<% else %>
+		                							AUD <%= @next_event.cost %>
+		                						<% end %>  
+		                			</li>
+					               <li><i class="icon-li icon-time"></i> <%= event.start_time.strftime("%l.%M%p") %> - <%= event.finish_time.strftime("%l.%M%p") %></li>
+					               <li><i class="icon-li icon-building"></i> <%= event.location %></li>
+					               <li><i class="icon-li icon-map-marker"></i> <%= event.address %><br><%= event.suburb %> <%= event.postcode %></li>
+								</ul>
+							</td>
+						</tr>
+						<% end %>
+					</table>
+		              
+	            	</div>
+	            </div>
+            </div>
+                
+    <%= link_to "Add event", new_event_path %>
+ </div>

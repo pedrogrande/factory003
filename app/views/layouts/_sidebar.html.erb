@@ -1,0 +1,33 @@
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+  <div class=" sidebar-nav">
+    
+      <%= link_to courses_path, class: "btn btn-warning btn-block btn-menu" do %>
+      		<i class="icon-tasks"></i> Courses
+      <% end %>
+      <%= link_to calendar_path, class: "btn btn-danger btn-block btn-menu" do %>
+      		<i class="icon-calendar"></i> Calendar
+      <% end %>
+     <!--  <%= link_to community_path, class: "btn btn-default btn-block btn-menu" do %>
+      		<i class="icon-group"></i> Community
+      <% end %> -->
+      <%= link_to contact_path, class: "btn btn-info btn-block btn-menu" do %>
+      		<i class="icon-envelope"></i> Contact
+      <% end %>
+      <%= link_to about_path, class: "btn btn-primary btn-block btn-menu" do %>
+      		<i class="icon-info-sign"></i> About
+      <% end %>
+   <!--    <%= link_to blog_path, class: "btn btn-success btn-block btn-menu" do %>
+      		<i class="icon-book"></i> Blog
+      <% end %> -->
+      <br>
+
+      <% if @next_event %>
+         <%= render 'layouts/next_event' %>
+      <% end %>
+
+      <% if @next_intake %>
+         <%= render 'layouts/next_course' %>
+      <% end %>
+
+	</div><!--/span-->
+</div><!--/row-->

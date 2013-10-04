@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Student enrolment Received</h1>
+    
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td><%= @enrolment.name %></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td><%= @enrolment.email %></td>
+      </tr>
+      <tr>
+        <th>Phone:</th>
+        <td><%= @enrolment.phone %></td>
+      </tr>
+      
+      <tr>
+        <th>Referrer</th>
+        <td><%= @enrolment.referral %></td>
+      </tr>
+      <tr>
+        <th>Courses:</th>
+        <td>
+          <% @enrolment.intakes.each do |intake| %>
+            <p><%= intake.title %></p>
+          <% end %>
+        </td>
+      </tr>
+      
+    </table>
+  </body>
+</html>

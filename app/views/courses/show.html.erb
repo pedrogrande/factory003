@@ -1,0 +1,128 @@
+<% content_for :title, @course.title + "A Coder Factory course - Ruby on Rails and Javascript courses in Sydney Australia" %>
+<% content_for :description, strip_tags(@course.description) %>
+
+
+<h1><%= link_to "Courses", courses_path, class: 'text-warning' %> > <%= @course.title %></h1>
+<div class="panel panel-warning">
+      <div class="panel-heading">
+          <h2 class="panel-title">
+              <span class="icon-stack">
+                <i class="icon-check-empty icon-stack-base"></i>
+                <i class="icon-<%= @course.icon %>"></i>
+              </span> 
+              <%= @course.title %> 
+          </h2>
+      </div>
+      <div class="panel-body">
+            <div class="row">
+              <div class="col-md-8">
+
+                <div class="well">
+                    <p class="lead"><%= @course.intro.html_safe %></p>
+
+                    <p><%= @course.description.html_safe %></p>
+                    <br>
+                    <p><strong>Designed for:</strong> <%= @course.designed_for.html_safe %></p>
+                    <hr>
+                    <% if @course.intakes.count > 0 %>
+                        <%= link_to new_enrolment_path, class: "btn btn-warning btn-lg" do %><i class="icon-edit"></i> ENROL<% end %>
+                        <%= link_to new_registration_path, class: "btn btn-info btn-lg" do %><i class="icon-book"></i> Request info pack<% end %>
+                    <% else %>
+                        <%= link_to new_registration_path, class: "btn btn-info btn-lg" do %><i class="icon-book"></i> Register your interest<% end %>
+                    <% end %>
+
+                </div>
+              </div>
+              <div class="col-md-3">
+                <h4><strong>Scheduled intakes</strong></h4>
+                <% if @course.intakes.count > 0 %>
+                    <% @course.intakes.each_with_index do |intake, i_index| %>
+                        <p><a data-toggle="modal" href="#modal<%= i_index %>" class="btn btn-warning btn-lg"> <i class="icon-calendar"></i> <%= intake.start_date.strftime("%e %B %Y") %></a></p>
+                    <% end %>
+                <% else %>
+                    <p>Coming soon</p>
+                <% end %>
+                <% if user_signed_in? %><%= link_to "Add intake", new_intake_path %><% end %>
+              </div>
+            </div>
+
+            <% if user_signed_in? %>
+              <%= link_to "Edit", edit_course_path(@course) %>
+            <% end %>
+
+    
+    </div>
+</div>
+                
+                <% if @course.intakes.count > 0 %>
+                      <% @course.intakes.each_with_index do |intake, i_index| %>
+                        <div class="modal fade" id="modal<%= i_index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                      <h3 class="modal-title text-warning">
+                                          <span class="icon-stack">
+                                            <i class="icon-check-empty icon-stack-base"></i>
+                                            <i class="icon-<%= @course.icon %>"></i>
+                                          </span> 
+                                          <strong><%= @course.title %>: <%= intake.start_date.strftime("%B") %> intake</strong></h3>
+                                    </div>
+                                    <div class="modal-body">
+                                      <table class="table table-hover">
+                                          <tr>
+                                              <td>
+                                                  <span class=" text-warning"><i class="icon-li icon-star"></i> <strong>Duration:</strong> </span>
+                                              </td>
+                                              <td>
+                                                  <%= intake.duration %> 
+                                                  <%= intake.duration_type %>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <span class=" text-warning"><i class="icon-li icon-calendar"></i> <strong>Class days:</strong> </span>
+                                              </td>
+                                              <td>
+                                                  <%= intake.class_days %> 
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <span class=" text-warning"><i class="icon-li icon-time"></i> <strong>Times:</strong> </span>
+                                              </td>
+                                              <td>
+                                                  <%= intake.start_time.strftime("%l.%M%p") %> - <%= intake.finish_time.strftime("%l.%M%p") %>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>
+                                                  <span class=" text-warning"><i class="icon-li icon-exclamation-sign"></i> <strong>Fee:</strong> </span>
+                                              </td>
+                                              <td>
+                                                  AUD <%= intake.cost.to_int %> (incl. GST)
+                                              </td>
+                                          </tr><tr>
+                                              <td>
+                                                  <span class=" text-warning"><i class="icon-li icon-map-marker"></i> <strong>Location:</strong> </span>
+                                              </td>
+                                              <td>
+                                                  <%= intake.location %> 
+                                              </td>
+                                          </tr>
+                                      </table>
+                                       
+                                        
+
+                                        
+                                    </div>
+                                    <div class="modal-footer">
+                                      <%= link_to new_enrolment_path, class: "btn btn-warning btn-lg" do %><i class="icon-edit"></i> Enrol<% end %>
+            <%= link_to new_registration_path, class: "btn btn-info btn-lg" do %><i class="icon-book"></i> Request info pack<% end %>
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                      </div><!-- /.modal -->
+                    <% end %>
+                <% end %>

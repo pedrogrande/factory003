@@ -1,0 +1,33 @@
+<div class="panel panel-danger">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><i class="icon-exclamation-sign"></i> Next info session</h3>
+	  </div>
+	  <div class="panel-body sidebar">
+	  		<h4><span class="text-danger"><%= @next_event.title %></span> <%= link_to @next_event, class: 'btn btn-xs btn-danger' do %><i class="icon-circle-arrow-right"></i> More info<% end %></h4>
+	    	<ul class="icons-ul">
+                  <li>
+                  		<i class="icon-li icon-star"></i> 
+                  		Cost: 
+                  			<% if @next_event.cost == 0 %>
+                  				<strong>FREE!</strong>
+                  			<% else %>
+                  				AUD <%= @next_event.cost %>
+                  			<% end %>  
+                  </li>
+		    	  <li>
+		    	  		<i class="icon-li icon-calendar"></i> 
+		    	  		<%= @next_event.date.strftime("%a, %e %b %Y") %>
+		    	  </li>
+		    	  <li>
+		    	  		<i class="icon-li icon-time"></i> 
+		    	  		<%= @next_event.start_time.strftime("%l.%M%p") %> - <%= @next_event.finish_time.strftime("%l.%M%p") %>
+		    	  </li>
+                  <li>
+                  		<i class="icon-li icon-map-marker"></i> 
+                  		<%= @next_event.location %>
+                  </li>
+		    </ul>
+	    
+	    <a href="<%= @next_event.rsvp %>" target="_blank" class="btn btn-danger btn-block"> <i class="icon-circle-arrow-right"></i> Reserve your place</a>
+	  </div>
+	</div>

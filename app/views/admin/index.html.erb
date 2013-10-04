@@ -1,0 +1,44 @@
+
+
+
+
+<h1>Listing courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Icon</th>
+      <th>Publish</th>
+      <th>Intro</th>
+      <th>Description</th>
+      <th>Designed for</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.title %></td>
+        <td><%= course.icon %></td>
+        <td><%= course.publish %></td>
+        <td><%= course.intro %></td>
+        <td><%= course.description %></td>
+        <td><%= course.designed_for %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course', new_course_path %>
+<% if user_signed_in? %>
+   <%= link_to 'Logout', destroy_user_session_path, class: 'btn btn-danger' %>
+<% end %>

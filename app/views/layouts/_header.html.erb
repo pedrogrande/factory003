@@ -1,0 +1,65 @@
+
+<div class="container">
+		<div class="row">
+
+			<div class="col-sm-6" id="logo">
+				<div class="panel panel-logo">
+					<div class="panel-body">
+				     <%= link_to root_path do %>
+				       <%= image_tag 'RoboLogo.jpg', class: 'img-responsive' %>
+				      <% end %>
+				    </div>
+					</div>
+		    </div>
+
+		    <div class="col-sm-3">
+					<div class="panel panel-primary">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Menu</h3>
+					  </div>
+					  <div class="panel-body">
+					    
+					    <%= link_to courses_path, class: "btn btn-warning btn-sm btn-block" do %>
+					    		<i class="icon-tasks"></i> Courses
+					    <% end %>
+					    <%= link_to calendar_path, class: "btn btn-danger btn-sm btn-block" do %>
+					    		<i class="icon-calendar"></i> Calendar
+					    <% end %>
+					    <%= link_to contact_path, class: "btn btn-default btn-sm btn-block" do %>
+					    		<i class="icon-group"></i> Community
+					    <% end %>
+					    <%= link_to contact_path, class: "btn btn-info btn-sm btn-block" do %>
+					    		<i class="icon-phone"></i> Contact
+					    <% end %>
+					    <%= link_to about_path, class: "btn btn-primary btn-sm btn-block" do %>
+					    		<i class="icon-question-sign"></i> About
+					    <% end %>
+					    <%= link_to blog_path, class: "btn btn-success btn-sm btn-block" do %>
+					    		<i class="icon-book"></i> Blog
+					    <% end %>
+					  </div>
+					</div>
+			  </div>
+
+		    <div class="col-sm-3">
+					<div class="panel panel-success">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Next event</h3>
+					  </div>
+					  <div class="panel-body">
+					    <p>
+					    	<strong>Info session</strong>
+					    	<ul class="icons-ul">
+						    	<li><i class="icon-li icon-map-marker"></i> Ohio Surry Hills</li>
+						    	<li><i class="icon-li icon-calendar-empty"></i> Wed, 2nd Oct</li>
+						    	<li><i class="icon-li icon-time"></i> 5.30pm - 7.00pm</li>
+						    </ul>
+					    </p>
+					    <a href="#" target="_blank" class="btn btn-success btn-sm btn-block">Reserve your place</a>
+					  </div>
+					</div>
+			  </div>
+
+		</div>
+</div>
+	

@@ -1,0 +1,35 @@
+
+          
+  <%= link_to root_path do %>
+     <%= image_tag 'RoboLogo4.jpg', class: 'img-responsive img-rounded' %>
+    <% end %>
+<br>
+
+<% if @messages.count > 0 %>
+  <% @messages.each_with_index do |message, index| %>
+    <% if index % 2 == 0 %>
+      <div class="row">
+    <% end %>
+    <div class="col-6 col-sm-6 col-lg-6">
+      <div class="panel panel-emerald">
+          <div class="panel-heading">
+              <div class="panel-title">
+                  <span class="icon-stack">
+                    <i class="icon-check-empty icon-stack-base"></i>
+                    <i class="icon-<%= message.icon %>"></i>
+                  </span> <%= message.title %>
+              </div>
+          </div>
+          <div class="panel-body justify">
+              <%= message.content.html_safe %>
+          </div>
+        </div>
+      </div><!--/col-->
+    <% if (index + 1) % 2 == 0 %>
+      </div><!--/row-->
+    <% end %>
+  <% end %>
+
+    </div><!--/final row-->
+<% end %>
+        
