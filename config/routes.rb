@@ -37,4 +37,7 @@ Factory003::Application.routes.draw do
   resources :enrolments
 
   root :to => "home#index"
+
+  get "sitemap.xml" => "sitemap#index", as: "sitemap", defaults: { format: "xml" }
+
 end

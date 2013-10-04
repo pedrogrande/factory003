@@ -27,7 +27,7 @@
 	              				<h2 class="calendar"><strong><%= link_to event.title, event %></strong></h2>
 	              				<%= link_to event, class: 'btn btn-default btn-sm' do %><i class="icon-info-sign"></i> More details<% end %>
 	              				<a href="<%= event.rsvp %>" target="_blank" class="btn btn-danger btn-sm"><i class="icon-circle-arrow-right"></i> Reserve your place</a>
-	              				<%= link_to "Edit", edit_event_path(event) %>
+	              				<% if user_signed_in? %><%= link_to "Edit", edit_event_path(event) %><% end %>
 	              			</td>
 	              			<td width="40%">
 	              				<ul class="icons-ul">
@@ -53,5 +53,5 @@
 	            </div>
             </div>
                 
-    <%= link_to "Add event", new_event_path %>
+    <% if user_signed_in? %><%= link_to "Add event", new_event_path %><% end %>
  </div>

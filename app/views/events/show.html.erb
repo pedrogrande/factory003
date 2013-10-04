@@ -38,6 +38,6 @@
                   <a href="<%= @event.rsvp %>" target="_blank" class="btn btn-info"><i class="icon-circle-arrow-right"></i> Reserve your place</a>
                   
                   <hr>
-                  <%= link_to "Edit", edit_event_path(@event) %>
+                  <% if user_signed_in? %><%= link_to "Edit", edit_event_path(@event) %><% end %>
                 </div>
             </div>
