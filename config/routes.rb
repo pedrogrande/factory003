@@ -1,6 +1,7 @@
 Factory003::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :skip => :registrations
+  resources :users
 
   get "blog/index", :id => "blog"
   match "blog" => "blog#index"
