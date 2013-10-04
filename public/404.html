@@ -12,15 +12,39 @@
       border-right-color: #999;
       border-bottom-color: #999;
     }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+    h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  line-height: 1.1;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.3em;
+  color: #444;
+  padding-top: 10px;
+  font-weight: 300;
+}
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
+  <img src="http://thecoderfactory.com/public/logo1.jpg">
   <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
+    <h1>Woops! Something has gone wrong!</h1>
+    <p>It's not your fault. Try going to <a href="http://thecoderfactory.com">The Coder Factory</a> home page and find what you are looking for from there.</p>
   </div>
 </body>
 </html>
