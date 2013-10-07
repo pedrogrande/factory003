@@ -1,5 +1,9 @@
 Factory003::Application.routes.draw do
-
+  match '/courses/web-app-coder' => redirect("/courses")
+  match '/courses/summer-coder-camp' => redirect("/courses")
+  match '/courses/web-app-coder-mon-wed' => redirect("/courses")
+  match '/courses/web-app-coder-sundays' => redirect("/courses")
+  match '/courses/javascript-coder' => redirect("/courses")
   devise_for :users, :skip => :registrations
   resources :users
 
