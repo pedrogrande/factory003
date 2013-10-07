@@ -14,6 +14,6 @@
 /log/*.log
 /tmp
 
-/db
+#/db
 
 /test
