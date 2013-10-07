@@ -6,7 +6,8 @@ class Course < ActiveRecord::Base
 	has_many :course_registrations
 	has_many :registrations, through: :course_registrations
 	
+	default_scope order: 'courses.priority ASC'
 	scope :published, -> { where(publish: true) }
 
-	attr_accessible :title, :icon, :publish, :intro, :description, :designed_for
+	attr_accessible :title, :icon, :publish, :intro, :description, :designed_for, :priority
 end
