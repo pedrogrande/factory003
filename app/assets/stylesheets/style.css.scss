@@ -432,3 +432,23 @@ footer {
 .panel-emerald > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #2ecc71;
 }
+.tooltip {
+  position: absolute;
+  z-index: 1030;
+  display: block;
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  visibility: visible;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #3498db;
+  border-radius: 4px;
+  white-space: pre-wrap;
+}

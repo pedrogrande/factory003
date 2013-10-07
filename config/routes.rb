@@ -1,4 +1,7 @@
 Factory003::Application.routes.draw do
+  resources :skills
+
+
   match '/courses/web-app-coder' => redirect("/courses")
   match '/courses/summer-coder-camp' => redirect("/courses")
   match '/courses/web-app-coder-mon-wed' => redirect("/courses")

@@ -10,6 +10,7 @@
     <%= f.input :intro, :input_html => { :rows => '5', class: "form-control"} %>
     <%= f.input :description, :input_html => { :rows => '5', class: "form-control"} %>
     <%= f.input :designed_for, :input_html => { :rows => '5', class: "form-control"} %>
+    <%= f.association :skills, as: :check_boxes %>
   </div>
   <br>
   <div class="form-actions">

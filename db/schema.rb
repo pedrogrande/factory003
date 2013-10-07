@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007012529) do
+ActiveRecord::Schema.define(:version => 20131007021555) do
 
   create_table "course_registrations", :force => true do |t|
     t.integer  "course_id"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(:version => 20131007012529) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  create_table "course_skills", :force => true do |t|
+    t.integer  "course_id"
+    t.integer  "skill_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "course_skills", ["course_id"], :name => "index_course_skills_on_course_id"
+  add_index "course_skills", ["skill_id"], :name => "index_course_skills_on_skill_id"
 
   create_table "courses", :force => true do |t|
     t.string   "title"
@@ -134,6 +144,13 @@ ActiveRecord::Schema.define(:version => 20131007012529) do
     t.boolean  "opt_in"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "skills", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

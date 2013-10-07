@@ -5,6 +5,8 @@ class Course < ActiveRecord::Base
 	has_many :intakes
 	has_many :course_registrations
 	has_many :registrations, through: :course_registrations
+	has_many :course_skills
+	has_many :skills, through: :course_skills
 	
 	default_scope order: 'courses.priority ASC'
 	scope :published, -> { where(publish: true) }

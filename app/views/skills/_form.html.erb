@@ -1,0 +1,8 @@
+<%= simple_form_for(@skill) do |f| %>
+
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.association :courses, as: :check_boxes %>
+
+    <%= f.submit %>
+<% end %>

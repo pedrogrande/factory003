@@ -30,3 +30,7 @@ $(document).ready(function() {
       })
 
 });
+
+jQuery( function($) {
+      $('a').tooltip();
+});

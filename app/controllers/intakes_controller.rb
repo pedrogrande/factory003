@@ -43,7 +43,7 @@ class IntakesController < ApplicationController
   # PATCH/PUT /intakes/1.json
   def update
 
-    @intake.title = @intake.course.title + ": " + @intake.start_date.strftime("%B, %Y")
+    @intake.title = @intake.course.title + ": " + @intake.start_date.strftime("%b, %Y")
     respond_to do |format|
       if @intake.update_attributes(params[:intake])
         format.html { redirect_to @intake, notice: 'Intake was successfully updated.' }
