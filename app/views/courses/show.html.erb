@@ -26,7 +26,8 @@
                     <p><strong>Skills covered:</strong></p>
                     <p>
                       <% @course.skills.each do |skill| %>
-                        <a href="#" data-toggle="tooltip" title="<%= skill.description %>" class="btn btn-default btn-xs"><%= skill.name %> </a>
+
+                        <a href="#" data-toggle="tooltip" title="<%= skill.description %>" class="btn btn-default btn-xs"><%= skill.name %> </a><br>
                       <% end %>
                     </p>
                     <hr>

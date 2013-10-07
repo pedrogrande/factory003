@@ -41,6 +41,7 @@ class SkillsController < ApplicationController
   # POST /skills.json
   def create
     @skill = Skill.new(params[:skill])
+    @skill.length = @skill.name.length
 
     respond_to do |format|
       if @skill.save
@@ -57,6 +58,7 @@ class SkillsController < ApplicationController
   # PUT /skills/1.json
   def update
     @skill = Skill.find(params[:id])
+    @skill.length = @skill.name.length
 
     respond_to do |format|
       if @skill.update_attributes(params[:skill])
