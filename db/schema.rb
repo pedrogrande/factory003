@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007121500) do
+ActiveRecord::Schema.define(:version => 20131007130020) do
 
   create_table "course_registrations", :force => true do |t|
     t.integer  "course_id"
@@ -135,6 +135,17 @@ ActiveRecord::Schema.define(:version => 20131007121500) do
     t.integer  "priority"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "slug"
+    t.string   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "lead"
+    t.string   "icon"
   end
 
   create_table "registrations", :force => true do |t|

@@ -1,4 +1,7 @@
 Factory003::Application.routes.draw do
+  resources :posts
+
+
   resources :skills
 
 

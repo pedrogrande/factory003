@@ -24,10 +24,11 @@
                     <br>
                     <p><strong>Designed for:</strong><br><%= @course.designed_for.html_safe %></p>
                     <p><strong>Skills covered:</strong></p>
+                    <br>
                     <p>
                       <% @course.skills.each do |skill| %>
 
-                        <a href="#" data-toggle="tooltip" title="<%= skill.description %>" class="btn btn-default btn-xs"><%= skill.name %> </a><br>
+                        <a href="#" data-toggle="tooltip" title="<%= skill.description %>" class="btn btn-default btn-xs" data-placement="right"><%= skill.name %> </a><br>
                       <% end %>
                     </p>
                     <hr>
