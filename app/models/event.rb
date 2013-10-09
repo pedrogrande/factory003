@@ -6,6 +6,10 @@ class Event < ActiveRecord::Base
 
 	scope :published, -> { where(publish: true) }
 
+	def self.next_event
+		where("date >= ?", Date.today)
+	end
+
 	def self.current_month(date)
     	where("date < ?", date)
   	end

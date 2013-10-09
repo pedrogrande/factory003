@@ -19,7 +19,7 @@
 	            	
 					<table class="table table-hover">
 	              		<% @current_month_events.each do |event| %>
-	              	
+	              		<% if event.date > Date.today %>
 	              		<tr>
 	              			<td>
 	              				
@@ -34,10 +34,10 @@
 		                			<li>
 		                					<i class="icon-li icon-star"></i> 
 		                					Cost: 
-		                						<% if @next_event.cost == 0 %>
+		                						<% if event.cost == 0 %>
 		                							<strong>FREE!</strong>
 		                						<% else %>
-		                							AUD <%= @next_event.cost %>
+		                							AUD <%= event.cost %>
 		                						<% end %>  
 		                			</li>
 					               <li><i class="icon-li icon-time"></i> <%= event.start_time.strftime("%l.%M%p") %> - <%= event.finish_time.strftime("%l.%M%p") %></li>
@@ -46,6 +46,7 @@
 								</ul>
 							</td>
 						</tr>
+						<% end %>
 						<% end %>
 					</table>
 		              

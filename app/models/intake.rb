@@ -7,5 +7,9 @@ class Intake < ActiveRecord::Base
   default_scope order: 'intakes.start_date ASC'
   scope :scheduled, -> { where(scheduled: true) }
 
+  def self.next_intake
+  	where("start_date >= ?", Date.today)
+  end
+
   attr_accessible :notes, :class_days, :course_id, :start_date, :start_time, :finish_time, :duration, :duration_type, :scheduled, :confirmed, :location, :cost
 end

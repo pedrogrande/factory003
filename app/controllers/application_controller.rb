@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   before_filter :get_next_event
 
   def get_next_event
-  	@next_event = Event.first
-    @next_intake = Intake.first
+  	@next_event = Event.next_event.first
+    @next_intake = Intake.next_intake.first
   end
 
   private
