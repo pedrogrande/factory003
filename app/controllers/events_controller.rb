@@ -26,8 +26,8 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
-    @event.month = @event.date.month.to_int
-    @event.year = @event.date.year.to_int
+    # @event.month = @event.date.month.to_int
+    # @event.year = @event.date.year.to_int
 
     respond_to do |format|
       if @event.save
@@ -44,8 +44,8 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
 
-    @event.month = @event.date.month.to_int
-    @event.year = @event.date.year.to_int
+    # @event.month = @event.date.month.to_int
+    # @event.year = @event.date.year.to_int
     respond_to do |format|
       if @event.update(params[:event])
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
