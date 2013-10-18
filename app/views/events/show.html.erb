@@ -16,7 +16,7 @@
                   <div class="row">
                   <div class="col-md-7">
                   <p class="lead"><%= @event.intro %> </p>
-                  <a href="<%= @event.rsvp %>" target="_blank" class="btn btn-info"><i class="icon-circle-arrow-right"></i> Reserve your place</a>
+                  <a href="<%= @event.rsvp %>" target="_blank" class="btn btn-danger"><i class="icon-circle-arrow-right"></i> Reserve your place</a>
                   </div>
                   <div class="col-md-5">
                   
@@ -35,7 +35,7 @@
                   <p><%= @event.description.html_safe %></p>
                   <hr>
                   
-                  <a href="<%= @event.rsvp %>" target="_blank" class="btn btn-info"><i class="icon-circle-arrow-right"></i> Reserve your place</a>
+                  <a href="<%= @event.rsvp %>" target="_blank" class="btn btn-danger"><i class="icon-circle-arrow-right"></i> Reserve your place</a>
                   
                   <hr>
                   <% if user_signed_in? %><%= link_to "Edit", edit_event_path(@event) %><% end %>
