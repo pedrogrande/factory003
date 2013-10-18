@@ -153,7 +153,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   devise
-  friendly_id
+  friendly_id (~> 4.0.10)
   hub
   jquery-rails
   newrelic_rpm

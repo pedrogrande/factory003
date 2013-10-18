@@ -9,7 +9,7 @@ end
 gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
-gem "friendly_id"
+gem "friendly_id", "~> 4.0.10"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
