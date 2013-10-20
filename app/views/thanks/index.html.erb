@@ -1,13 +1,25 @@
 <br>
-<div class="panel panel-info">
+<div class="panel panel-success">
 	<div class="panel-heading">
 		<h2 class="panel-title"><i class="icon-smile"></i> Thank you for contacting The Coder Factory</h2>
 	</div>
 	<div class="panel-body">
-		<p>You will receive a confirmation email shortly. </p>
-		<p><%= link_to "Return to the home page", root_path, :class => 'btn btn-lg btn-success' %>
+		<div class="alert alert-success">Your enquiry/enrolment has been sent. You will receive an email shortly.</div>
+		<h3 class="text-info"><strong>Know anyone interested in learning to code?</strong></h3>
+		<p class="lead">Please tell them about The Coder Factory.</p>
 
+	    <a href="https://www.facebook.com/sharer/sharer.php?u=http://thecoderfactory.com" class="btn btn-info btn-lg" target="_blank" rel="nofollow" >Share on <i class="icon-facebook-sign"></i> </a>
+	           
+	    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://thecoderfactory.com&source=The Coder Factory" rel="nofollow" target="_blank" class="btn btn-primary btn-lg">Share on <i class="icon-linkedin-sign"></i></a>
+	    
+	    <a href="https://plus.google.com/share?url=http://thecoderfactory.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn btn-danger btn-lg">Share on <i class="icon-google-plus-sign"></i> </a>
+
+	    
+	    <a href="https://twitter.com/share?url=http://thecoderfactory.com&via=coderfactory&text=Learn to code" class="btn btn-info btn-lg popup" rel="nofollow" target="_blank">Tweet <i class="icon-twitter-sign"></i> </a>
 	</div>
 </div>
+
+		<p><%= link_to "Return to the home page", root_path, :class => 'btn btn-success' %></p>
+
 
 
