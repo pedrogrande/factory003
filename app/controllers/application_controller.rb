@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def get_next_event
   	@next_event = Event.next_event.first
-    @next_intake = Intake.next_intake.first
+    @next_intake = Intake.future_intakes.first
   end
 
   private

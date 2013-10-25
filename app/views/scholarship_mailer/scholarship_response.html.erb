@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+
+
+    <h1>Thank you <%= @scholarship.first_name %>. Your scholarship application for Web App Coder at The Coder Factory has been received. </h1>
+
+    <p>A representative will be in touch with you shortly to organise a suitable time for an interview.</p>
+    <p>If you have any questions, please contact Pete Argent at pete@thecoderfactory.com or call 0402 180 512</p>
+
+    <p>Here is a copy of your application for your records.</p>
+    
+    <table>
+          <tr>
+            <th>Name:</th>
+            <td><%= @scholarship.first_name %></td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td><%= @scholarship.email %></td>
+          </tr>
+          <tr>
+            <th>Phone:</th>
+            <td><%= @scholarship.phone %></td>
+          </tr>
+          
+          <tr>
+            <th>LinkedIn Profile:</th>
+            <td><%= @scholarship.linkedin %></td>
+          </tr>
+          <tr>
+            <th>About applicant:</th>
+            <td>
+              <% @scholarship.background %>
+            </td>
+          </tr>
+          <tr>
+            <th>Education:</th>
+            <td>
+              <% @scholarship.education_history %>
+            </td>
+          </tr>
+          <tr>
+            <th>Work background:</th>
+            <td>
+              <% @scholarship.work_history %>
+            </td>
+          </tr>
+          <tr>
+            <th>Motivation:</th>
+            <td>
+              <% @scholarship.motivation %>
+            </td>
+          </tr>
+          <tr>
+            <th>Goals:</th>
+            <td>
+              <% @scholarship.goals %>
+            </td>
+          </tr>
+          <tr>
+            <th>Accepts terms:</th>
+            <td>
+              <% @scholarship.agree_to_terms %>
+            </td>
+          </tr>
+          
+        </table>
+  </body>
+</html>

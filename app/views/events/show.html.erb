@@ -1,4 +1,4 @@
-<% content_for :title, " - coding courses, web application development and startup support" %>
+<% content_for :title, "<%= @event.title - coding courses, web application development and startup support" %>
 <% content_for :description, "The Coder Factory is a new type of organisation, one that provides technology education, employment opportunities and supports your startup ambitions." %>
 
 <h1><%= link_to "Calendar", calendar_path, class: 'text-danger' %> > <%= @event.title %></h1>
