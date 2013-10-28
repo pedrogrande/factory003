@@ -64,8 +64,8 @@
     </div>
 </div>
                 
-                <% if @course.intakes.count > 0 %>
-                      <% @course.intakes.each_with_index do |intake, i_index| %>
+                <% if @intakes.count > 0 %>
+                      <% @intakes.each_with_index do |intake, i_index| %>
                         <div class="modal fade" id="modal<%= i_index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
