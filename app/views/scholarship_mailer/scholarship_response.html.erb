@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+
+
+    <h1>Thank you <%= @scholarship.first_name %>.</h1>
+    <h2> Your scholarship application for Web App Coder at The Coder Factory has been received. </h2>
+
+    <p style="font-size: 16px;">A representative will be in touch with you shortly to organise a suitable time for an interview.</p>
+    <p style="font-size: 16px;">If you have any questions, please contact Pete Argent at pete@thecoderfactory.com or call 0402 180 512</p>
+
+    <p style="font-size: 16px;">Here is a copy of your application for your records.</p>
+    
+    <table>
+          <tr>
+            <td width="150px">First name:</td>
+            <td><%= @scholarship.first_name %></td>
+          </tr>
+          <tr>
+            <td>Last name:</td>
+            <td><%= @scholarship.last_name %></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><%= @scholarship.email %></td>
+          </tr>
+          <tr>
+            <td>Phone:</td>
+            <td><%= @scholarship.phone %></td>
+          </tr>
+          
+          <tr>
+            <td>LinkedIn Profile:</td>
+            <td><%= @scholarship.linkedin %></td>
+          </tr>
+          <tr>
+            <td>About applicant:</td>
+            <td>
+              <%= @scholarship.background %>
+            </td>
+          </tr>
+          <tr>
+            <td>Education:</td>
+            <td>
+              <%= @scholarship.education_history %>
+            </td>
+          </tr>
+          <tr>
+            <td>Work background:</td>
+            <td>
+              <%= @scholarship.work_history %>
+            </td>
+          </tr>
+          <tr>
+            <td>Motivation:</td>
+            <td>
+              <%= @scholarship.motivation %>
+            </td>
+          </tr>
+          <tr>
+            <td>Goals:</td>
+            <td>
+              <%= @scholarship.goals %>
+            </td>
+          </tr>
+          <tr>
+            <td>Accepts terms:</td>
+            <td>
+              <%= @scholarship.agree_to_terms %>
+            </td>
+          </tr>
+          
+        </table>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @scholarship.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @scholarship.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @scholarship.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @scholarship.phone %>
+</p>
+
+<p>
+  <b>Linkedin:</b>
+  <%= @scholarship.linkedin %>
+</p>
+
+<p>
+  <b>Background:</b>
+  <%= @scholarship.background %>
+</p>
+
+<p>
+  <b>Work history:</b>
+  <%= @scholarship.work_history %>
+</p>
+
+<p>
+  <b>Education history:</b>
+  <%= @scholarship.education_history %>
+</p>
+
+<p>
+  <b>Motivation:</b>
+  <%= @scholarship.motivation %>
+</p>
+
+<p>
+  <b>Goals:</b>
+  <%= @scholarship.goals %>
+</p>
+
+<p>
+  <b>Referrer:</b>
+  <%= @scholarship.referrer %>
+</p>
+
+<p>
+  <b>Agree to terms:</b>
+  <%= @scholarship.agree_to_terms %>
+</p>
+
+
+<%= link_to 'Edit', edit_scholarship_path(@scholarship) %> |
+<%= link_to 'Back', scholarships_path %>

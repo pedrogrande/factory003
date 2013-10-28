@@ -6,10 +6,12 @@ class Intake < ActiveRecord::Base
 
   default_scope order: 'intakes.start_date ASC'
   scope :scheduled, -> { where(scheduled: true) }
+  scope :future_intakes, -> { scheduled.where("start_date >= ?", Date.today)}
 
-  def self.next_intake
-  	where("start_date >= ?", Date.today)
-  end
+
+  # def self.future_intakes
+  # 	where("start_date >= ?", Date.today && "scheduled == ", true)
+  # end
 
   attr_accessible :notes, :class_days, :course_id, :start_date, :start_time, :finish_time, :duration, :duration_type, :scheduled, :confirmed, :location, :cost
 end

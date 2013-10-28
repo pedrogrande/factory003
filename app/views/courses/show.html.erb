@@ -21,16 +21,9 @@
                     <p class="lead"><%= @course.intro.html_safe %></p>
 
                     <p><%= @course.description.html_safe %></p>
-                    <br>
+                    
                     <p><strong>Designed for:</strong><br><%= @course.designed_for.html_safe %></p>
-                    <p><strong>Skills covered:</strong></p>
-                    <br>
-                    <p>
-                      <% @course.skills.each do |skill| %>
-
-                        <a href="#" data-toggle="tooltip" title="<%= skill.description %>" class="btn btn-default btn-xs" data-placement="right"><%= skill.name %> </a><br>
-                      <% end %>
-                    </p>
+                    
                     <hr>
                     <% if @intakes.count > 0 %>
                         <%= link_to new_enrolment_path, class: "btn btn-warning btn-lg" do %><i class="icon-edit"></i> ENROL<% end %>
@@ -50,6 +43,15 @@
                 <% else %>
                     <p>Coming soon</p>
                 <% end %>
+                <hr>
+                <p><strong>Skills covered:</strong></p>
+                    
+                    <p>
+                      <% @course.skills.each do |skill| %>
+
+                        <a href="#" data-toggle="tooltip" title="<%= skill.description %>" class="btn btn-default btn-xs" data-placement="right"><%= skill.name %> </a><br>
+                      <% end %>
+                    </p>
                 <% if user_signed_in? %><%= link_to "Add intake", new_intake_path %><% end %>
               </div>
             </div>
@@ -62,8 +64,8 @@
     </div>
 </div>
                 
-                <% if @course.intakes.count > 0 %>
-                      <% @course.intakes.each_with_index do |intake, i_index| %>
+                <% if @intakes.count > 0 %>
+                      <% @intakes.each_with_index do |intake, i_index| %>
                         <div class="modal fade" id="modal<%= i_index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">

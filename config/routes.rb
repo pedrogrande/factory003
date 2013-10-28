@@ -1,4 +1,10 @@
 Factory003::Application.routes.draw do
+  get "ruby_on_rails_course_scholarship/index", :id => "ruby_on_rails_course_scholarship"
+  match "ruby_on_rails_course_scholarship" => "ruby_on_rails_course_scholarship#index"
+
+  resources :scholarships
+
+
   resources :posts
 
 

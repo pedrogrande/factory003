@@ -1,7 +1,7 @@
 class SitemapController < ApplicationController
   layout nil
   def index
-    @static_paths = [root_path, calendar_path, about_path, contact_path, courses_path]
+    @static_paths = [root_path, calendar_path, about_path, contact_path, courses_path, ruby_on_rails_course_scholarship_path]
     @courses = Course.all
     @events = Event.all
     @base_url = "http://#{request.host_with_port}"

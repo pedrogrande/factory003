@@ -1,0 +1,2 @@
+module RubyOnRailsCourseScholarshipHelper
+end

@@ -369,7 +369,9 @@ footer {
   }
 }
 
-
+.top-message {
+  margin-bottom:0;
+}
 
 .breadcrumb {
   padding: 8px 15px;
@@ -456,4 +458,20 @@ footer {
   color: #468847;
   background-color: #dff0d8;
   border-color: #d6e9c6;
+}
+
+li {
+	padding-bottom: 15px;
+}
+.ninefold {
+  color: white;
+  background-color: #1E1F1E;
+
+}
+.ninefold-logo {
+  width:50px;
+}
+.top-header {
+  min-height: 200px;
+  background-color: #3598DB;
 }

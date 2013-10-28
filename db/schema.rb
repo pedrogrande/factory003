@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007130020) do
+ActiveRecord::Schema.define(:version => 20131024232813) do
 
   create_table "course_registrations", :force => true do |t|
     t.integer  "course_id"
@@ -155,6 +155,23 @@ ActiveRecord::Schema.define(:version => 20131007130020) do
     t.boolean  "opt_in"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "scholarships", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "linkedin"
+    t.text     "background"
+    t.text     "work_history"
+    t.text     "education_history"
+    t.text     "motivation"
+    t.text     "goals"
+    t.string   "referrer"
+    t.boolean  "agree_to_terms"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "skills", :force => true do |t|
