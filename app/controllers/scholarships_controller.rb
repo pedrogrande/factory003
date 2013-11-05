@@ -1,5 +1,5 @@
 class ScholarshipsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:new, :create]
   # GET /scholarships
   # GET /scholarships.json
   def index
